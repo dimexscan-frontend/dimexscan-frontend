@@ -46,9 +46,9 @@ const Footer = () => {
   const apiVersionUrl = getApiVersionUrl(backendVersionData?.backend_version ?? undefined);
 
   const DIMEX_LINKS = [
-    { icon: 'docs' as const, iconSize: '20px', text: 'DimeX Chain', url: 'https://www.dimexchain.tech' },
-    { icon: 'brands/pro_api' as const, iconSize: '20px', text: 'DimeX Exchange', url: 'https://www.dimex.site' },
-    { icon: 'social/twitter' as const, iconSize: '24px', text: 'DimeX Global', url: 'https://x.com/DimeXGlobal' },
+    { icon: 'docs' as const, iconSize: '20px', iconOnly: true, text: 'DimeX Chain', url: 'https://www.dimexchain.tech' },
+    { icon: 'brands/pro_api' as const, iconSize: '20px', iconOnly: true, text: 'DimeX Exchange', url: 'https://www.dimex.site' },
+    { icon: 'social/twitter' as const, iconSize: '20px', iconOnly: true, text: 'DimeX Global', url: 'https://x.com/DimeXGlobal' },
   ];
 
   const frontendLink = (() => {

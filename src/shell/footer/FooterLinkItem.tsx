@@ -18,6 +18,7 @@ type Props = {
   text: string;
   url: string;
   isLoading?: boolean;
+  iconOnly?: boolean;
 };
 
 const FooterLinkItemIconExternal = ({ iconUrl, text }: { iconUrl: Array<string>; text: string }) => {
@@ -35,7 +36,7 @@ const FooterLinkItemIconExternal = ({ iconUrl, text }: { iconUrl: Array<string>;
   );
 };
 
-const FooterLinkItem = ({ icon, iconSize, iconUrl, text, url, isLoading }: Props) => {
+const FooterLinkItem = ({ icon, iconSize, iconUrl, text, url, isLoading, iconOnly }: Props) => {
   if (isLoading) {
     return <Skeleton loading my="3px">{ text }</Skeleton>;
   }
@@ -61,9 +62,9 @@ const FooterLinkItem = ({ icon, iconSize, iconUrl, text, url, isLoading }: Props
   })();
 
   return (
-    <Link href={ url } display="flex" alignItems="center" h="30px" variant="subtle" external noIcon textStyle="xs" columnGap={ 2 }>
+    <Link href={ url } display="flex" alignItems="center" justifyContent="center" h="30px" w={ iconOnly ? "30px" : "auto" } aria-label={ text } title={ text } variant="subtle" external noIcon textStyle="xs" columnGap={ 2 }>
       { iconElement }
-      { text }
+      { !iconOnly && text }
     </Link>
   );
 };

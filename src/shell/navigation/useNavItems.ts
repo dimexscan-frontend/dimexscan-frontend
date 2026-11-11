@@ -97,12 +97,13 @@ export default function useNavItems(): ReturnType {
       icon: 'navigation/name_services',
       isActive: pathname.startsWith('/name-services'),
     } : null;
-    const validators = config.features.validators.isEnabled ? {
+    const validators = null as NavItem | null;
+    /* const validators = config.features.validators.isEnabled ? {
       text: 'Validators',
       nextRoute: { pathname: '/validators' as const },
       icon: 'navigation/validator',
       isActive: pathname === '/validators' || pathname === '/validators/[id]',
-    } : null;
+    } : null; */
     const rollupDeposits = {
       text: `Deposits (${ layerLabels.parent }${ rightLineArrow }${ layerLabels.current })`,
       nextRoute: { pathname: '/deposits' as const },
