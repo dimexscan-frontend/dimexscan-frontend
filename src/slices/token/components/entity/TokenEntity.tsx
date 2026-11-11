@@ -102,7 +102,7 @@ const Reputation = ({ value, ...rest }: ReputationProps) => {
 
 const TokenEntity = (props: EntityProps) => {
   return (
-    <Container w="100%" { ...props }>
+    <Container w="100%" { ...props } chain={ props.chain ?? { id: config.chain.id, name: config.chain.name, logo: config.chain.logo.default } }>
       <Icon/>
       <Link><Content/></Link>
       <Symbol/>

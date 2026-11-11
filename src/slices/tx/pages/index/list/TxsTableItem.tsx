@@ -82,6 +82,7 @@ const TxsTableItem = ({
             timestamp={ tx.timestamp }
             enableIncrement={ enableTimeIncrement }
             isLoading={ isLoading }
+            timeFormat="absolute"
             color="text.secondary"
           />
         </VStack>

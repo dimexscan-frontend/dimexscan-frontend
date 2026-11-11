@@ -30,7 +30,7 @@ const TokenIconNative = ({ isLoading, className, type }: Props) => {
     <Image
       className={ className }
       borderRadius="base"
-      src={ src || undefined }
+      src={ src || (type === 'secondary' ? undefined : 'https://www.dimex.site/assets/dimex-token-logo-navy.svg') }
       alt={ `${ config.chain.currency.symbol } logo` }
       fallback={ <TokenIconPlaceholder/> }
     />
