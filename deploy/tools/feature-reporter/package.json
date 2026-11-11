@@ -1,0 +1,17 @@
+{
+  "name": "feature-reporter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "vite build --logLevel error",
+    "print_report": "node ./dist/index.js",
+    "dev": "./dev.sh"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.4",
+    "dotenv-cli": "^7.4.4",
+    "vite": "8.3.5"
+  }
+}

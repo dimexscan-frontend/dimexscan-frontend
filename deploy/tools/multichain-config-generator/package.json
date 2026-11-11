@@ -1,0 +1,15 @@
+{
+  "name": "@blockscout/multichain-config-generator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build --logLevel error",
+    "generate": "node dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vite": "8.3.5",
+    "@types/node": "24.13.4"
+  }
+}
