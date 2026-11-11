@@ -11,6 +11,7 @@ import SearchBarMobile from 'src/slices/search/components/search-bar/SearchBarMo
 import UserProfileDesktop from 'src/features/account/components/user-profile/UserProfileDesktop';
 import config from 'src/config';
 import useIsMobile from 'src/shared/hooks/useIsMobile';
+import SpriteIcon from 'src/sprite/SpriteIcon';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -88,7 +89,7 @@ const DimeXLayoutHome = ({ children }: Props) => {
               fontWeight="600"
               _hover={{ color: '#172D4B', textDecoration: 'none' }}
             >
-              {item.label}
+              {item.label === 'Home' ? '⌂ Home' : item.label}
             </Link>
           ))}
         </Flex>
@@ -107,26 +108,21 @@ const DimeXLayoutHome = ({ children }: Props) => {
         </AppErrorBoundary>
       </Box>
 
-      <Box mt={12} bg="#101D32" color="#C5D0DF">
-        <Flex
-          maxW="1440px"
-          mx="auto"
-          px={{ base: 4, md: 7 }}
-          py={7}
-          justify="space-between"
-          align={{ base: 'flex-start', md: 'center' }}
-          direction={{ base: 'column', md: 'row' }}
-          gap={3}
-        >
-          <Text fontSize="13px">© {new Date().getFullYear()} DimeXScan. All rights reserved.</Text>
-          <Flex gap={4} wrap="wrap">
-            <Link href="https://www.dimexchain.tech" color="#C5D0DF">⛓ DimeX Chain</Link>
-            <Link href="https://www.dimexscan.tech" color="#C5D0DF">🔎 DimeXScan Explorer</Link>
-            <Link href="https://www.dimex.site" color="#C5D0DF">⇄ DimeX Exchange</Link>
-            <Link href="mailto:info@dimexscan.tech" color="#C5D0DF">✉ Contact</Link>
-          </Flex>
-          <Text fontSize="12px">Powered by DimeX Chain · Network ID {config.chain.id}</Text>
+      <Box mt={10} bg="#101D32" color="#C5D0DF">
+        <Flex maxW="1440px" mx="auto" px={{ base: 4, md: 7 }} py={4}
+          justify="center" align="center" gap={{ base: 5, md: 9 }} wrap="wrap">
+          <Link href="https://www.dimex.site" aria-label="Explorer" title="Explorer"
+            fontSize="13px" _hover={{ color: "white" }}><SpriteIcon name="globe" boxSize="18px"/></Link>
+          <Link href="https://www.dimexchain.tech" aria-label="Main Website" title="Main Website"
+            fontSize="13px" _hover={{ color: "white" }}><SpriteIcon name="globe" boxSize="18px"/></Link>
+          <Link href="mailto:info@dimexscan.tech" aria-label="Contact" title="Contact"
+            fontSize="13px" _hover={{ color: "white" }}><SpriteIcon name="email" boxSize="18px"/></Link>
+          <Link href="https://x.com/DimeXGlobal" aria-label="X" title="X"
+            fontSize="13px" fontWeight="700" _hover={{ color: "white" }}><SpriteIcon name="social/twitter" boxSize="18px"/></Link>
         </Flex>
+        <Text textAlign="center" fontSize="10px" color="#8190A5" pb={3}>
+          © {new Date().getFullYear()} DimeXScan
+        </Text>
       </Box>
     </Box>
   );
