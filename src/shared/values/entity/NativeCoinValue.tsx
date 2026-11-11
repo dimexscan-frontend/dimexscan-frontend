@@ -3,6 +3,8 @@
 import { Box } from '@chakra-ui/react';
 import BigNumber from 'bignumber.js';
 import React from 'react';
+import config from 'src/config';
+import { Image } from 'src/toolkit/chakra/image';
 
 import CopyToClipboard from 'src/shared/texts/CopyToClipboard';
 
@@ -31,6 +33,7 @@ const NativeCoinValue = ({
   unitsTooltip,
   copyOriginalValue,
   noSymbol,
+  startElement,
   loading,
   gweiThreshold,
   accuracy,
@@ -82,6 +85,11 @@ const NativeCoinValue = ({
       amount={ amount }
       decimals={ decimals }
       asset={ asset }
+      startElement={ startElement ?? (
+        config.chain.currency.symbol === 'DMXC' && !assetProp && !noSymbol ?
+          <Image src="https://www.dimex.site/assets/dimex-token-logo-navy.svg" alt="DMXC" boxSize="16px" objectFit="contain"/> :
+          undefined
+      ) }
       loading={ loading }
       accuracy={ unitsProp === 'wei' && units === 'gwei' && gweiThreshold ? gweiThreshold : accuracy }
       tooltipContent={ tooltipContent }

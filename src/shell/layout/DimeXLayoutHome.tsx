@@ -17,7 +17,6 @@ const navItems = [
   { label: 'Blockchain', href: '/blocks' },
   { label: 'Transactions', href: '/txs' },
   { label: 'Tokens', href: '/tokens' },
-  { label: 'Validators', href: '/validators' },
   { label: 'Statistics', href: '/stats' },
 ];
 
@@ -92,11 +91,6 @@ const DimeXLayoutHome = ({ children }: Props) => {
               {item.label}
             </Link>
           ))}
-          <Flex ml="auto" align="center" gap={{ base: 4, md: 6 }} flexShrink={0}>
-            <Link href="https://www.dimexchain.tech" color="#172D4B" fontSize="12px" fontWeight="700">DimeX Chain</Link>
-            <Link href="https://www.dimex.site" color="#172D4B" fontSize="12px" fontWeight="700">DimeX Exchange</Link>
-            <Link href="https://x.com/DimeXGlobal" color="#172D4B" fontSize="12px" fontWeight="700">DimeX Global</Link>
-          </Flex>
         </Flex>
       </Box>
 
@@ -126,9 +120,10 @@ const DimeXLayoutHome = ({ children }: Props) => {
         >
           <Text fontSize="13px">© {new Date().getFullYear()} DimeXScan. All rights reserved.</Text>
           <Flex gap={4} wrap="wrap">
-            <Link href="https://www.dimexchain.tech" color="#C5D0DF">DimeX Chain</Link>
-            <Link href="https://www.dimex.site" color="#C5D0DF">DimeX Exchange</Link>
-            <Link href="https://x.com/DimeXGlobal" color="#C5D0DF">DimeX Global</Link>
+            <Link href="https://www.dimexchain.tech" color="#C5D0DF">⛓ DimeX Chain</Link>
+            <Link href="https://www.dimexscan.tech" color="#C5D0DF">🔎 DimeXScan Explorer</Link>
+            <Link href="https://www.dimex.site" color="#C5D0DF">⇄ DimeX Exchange</Link>
+            <Link href="mailto:info@dimexscan.tech" color="#C5D0DF">✉ Contact</Link>
           </Flex>
           <Text fontSize="12px">Powered by DimeX Chain · Network ID {config.chain.id}</Text>
         </Flex>
